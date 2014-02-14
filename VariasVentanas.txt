@@ -19,9 +19,9 @@ public class VariasVentanas implements ActionListener{
 		b2= new Button ("Siguiente");
 		b3= new Button ("Salir");
 
-		b1.addActionListener(this);
+		*/b1.addActionListener(this);
 		b2.addActionListener(this);
-		b3.addActionListener(this);
+		b3.addActionListener(this);/*
 
 	f.setLayout(new FlowLayout());
 	f.add(b1);
