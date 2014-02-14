@@ -1,0 +1,60 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class VariasVentanas implements ActionListener{
+
+	Frame f,f1;
+	Label et;
+	Choice c;
+	Checkbox cb,cb1;
+	Button b1,b2,b3;
+	public VariasVentanas(){
+		c= new Choice();
+		et= new Label();
+		cb= new Checkbox("opcion 1");
+		cb1= new Checkbox("opcion 2");
+		f= new Frame ("principal");
+		f1= new Frame ("secundaria");
+		b1= new Button ("Salir");
+		b2= new Button ("Siguiente");
+		b3= new Button ("Salir");
+
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+
+	f.setLayout(new FlowLayout());
+	f.add(b1);
+	f.add(b2);
+
+	f1.setLayout(new FlowLayout());
+	f1.add(b3);
+	f.add(c);
+	c.add("R1");
+	c.add("R2");
+	c.add("R3");
+	f.add(et);
+	f.add(cb);
+	f.add(cb1);
+
+	f.setSize(400,400);
+	f.setVisible(true);
+	f1.setSize(400,400);
+       }
+public void actionPerformed(ActionEvent e){
+	if(e.getActionCommand()=="Siguiente")
+		f1.setVisible(true);
+	
+	else
+	     if(e.getSource().equals(b3)){
+		et.setText(c.getSelectedItem());
+		et.setText(et.getText()+(cb.getState()?"opcion 1":"opcion 2"));
+		f1.dispose();
+	       }
+	else 
+	     System.exit(0);
+     }
+public static void main(String args[]){
+	VariasVentanas v=new VariasVentanas();
+       }
+}     
